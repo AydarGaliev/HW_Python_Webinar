@@ -49,5 +49,85 @@
 #             return f'yes: {i + 1}'
 #     return 'no'             # 2 вариант (с выводом позиции второго входа)
 
-
 # print(SearchElem(['qwerty', 'asd', 'zxc', 'qwerty', 'ertqwe'], 'qwerty'))
+
+# Домашнее задание
+
+# 1 Задача
+# Задайте список из нескольких чисел. Напишите программу, которая найдёт сумму элементов списка, стоящих на нечётной позиции.
+# Пример:
+# - [2, 3, 5, 9, 3] -> на нечётных позициях элементы 3 и 9, ответ: 12
+
+# list = [2, 3, 5, 9, 3]
+
+# def sum_elem (list):
+#     result = 0
+#     for i in range (len(list)):
+#         if i % 2 != 0 :
+#             result += list[i]
+#     return result
+
+# print(sum_elem(list))
+
+# 2 Задача
+# Напишите программу, которая найдёт произведение пар чисел списка. Парой считаем первый и последний элемент, второй и предпоследний и т.д.
+# Пример:
+# - [2, 3, 4, 5, 6] => [12, 15, 16];
+# - [2, 3, 5, 6] => [12, 15]
+
+# import math
+
+# list = [2, 3, 4, 5, 6]
+
+# def multiple(list):
+#     composition = []
+#     for i in range(int(math.ceil(len(list)/2))):
+#         composition += {list[i]*list[-(i+1)]}
+#     return composition
+
+# print(multiple(list))
+
+# 3 Задача
+# Задайте список из вещественных чисел. Напишите программу, которая найдёт разницу 
+# между максимальным и минимальным значением дробной части элементов.
+# Пример:
+# - [1.1, 1.2, 3.1, 5, 10.01] => 0.19
+
+# import math
+
+# list = [1.1, 1.2, 3.1, 5, 10.01]
+
+# def numberList(a):
+#     for i in range(len(a)):
+#         a[i] = round(a[i]-math.floor(a[i]), 2)
+
+# def difference(a):
+#     maximum = a[0]
+#     minimum = a[0]
+#     for i in range(len(a)):
+#         if maximum < a[i]:
+#             maximum = a[i]
+#         elif minimum > a[i] and a[i] != 0:
+#             minimum = a[i]
+#     return maximum-minimum
+
+# numberList(list)
+# print(difference(list))
+
+# 4 Задача
+# Напишите программу, которая будет преобразовывать десятичное число в двоичное.
+# Пример:
+# - 45 -> 101101
+# - 3 -> 11
+# - 2 -> 10
+
+# numbers = int(input('Введите число: '))
+
+# def binar(a):
+#     result = ''
+#     while a > 0:
+#         result = str(a % 2) + result
+#         a = a // 2
+#     return result
+
+# print(binar(numbers))
